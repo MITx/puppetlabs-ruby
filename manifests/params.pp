@@ -13,7 +13,7 @@
 #
 class ruby::params {
 
- case $operatingsystem {
+  case $::operatingsystem {
     "centos": {
       $ruby_dev="ruby-devel"
     }
