@@ -29,12 +29,12 @@ class ruby {
   }
 
   exec { 'alt-ruby':
-    command     => 'update-alternatives --config ruby --skip-auto',
+    command     => 'update-alternatives --auto ruby',
     refreshonly => true,
   }
 
   exec { 'alt-gem':
-    command     => 'update-alternatives --config gem --skip-auto',
+    command     => 'update-alternatives --auto gem', 
     refreshonly => true,
   }
 
