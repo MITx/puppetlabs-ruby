@@ -34,7 +34,7 @@ class ruby {
   }
 
   exec { 'alt-gem':
-    command     => 'update-alternatives --auto gem', 
+    command     => 'update-alternatives --set gem /usr/bin/gem1.9.1',
     refreshonly => true,
   }
 
