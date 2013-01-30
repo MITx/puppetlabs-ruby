@@ -29,13 +29,13 @@ class ruby {
   }
 
   exec { 'alt-ruby':
-    command     => 'update-alternatives --auto ruby',
-    refreshonly => true,
+    command => 'update-alternatives --auto ruby',
+    onlyif  => 'readlink /etc/alternatives/ruby | grep ruby1.8'
   }
 
   exec { 'alt-gem':
-    command     => 'update-alternatives --set gem /usr/bin/gem1.9.1',
-    refreshonly => true,
+    command => 'update-alternatives --set gem /usr/bin/gem1.9.1',
+    onlyif  => 'readlink /etc/alternatives/gem | grep gem1.8',
   }
 
 }
