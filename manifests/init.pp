@@ -16,7 +16,8 @@ class ruby {
 
   include ruby::params
 
-  package { [ 'ruby1.9.1', 'ruby1.9.1-dev', 'ri1.9.1', 'build-essential', 'libssl-dev', 'zlib1g-dev' ]:
+  package { [ 'libaugeas-ruby1.9.1', 'ruby1.9.1', 'ruby1.9.1-dev',
+              'ri1.9.1', 'build-essential', 'libssl-dev', 'zlib1g-dev' ]:
     ensure => installed,
     notify => Exec['change-ruby-version'],
   }
